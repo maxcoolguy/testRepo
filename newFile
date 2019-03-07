@@ -1,0 +1,64 @@
+; Sample stunnel configuration file for Win32 by Michal Trojnara 2002-2015
+; Some options used here may be inadequate for your particular configuration
+; This sample file does *not* represent stunnel.conf defaults
+; Please consult the manual for detailed description of available options
+
+; **************************************************************************
+; * Global options                                                         *
+; **************************************************************************
+
+; Debugging stuff (may be useful for troubleshooting)
+debug = info
+output = stunnel.log
+
+; Enable FIPS 140-2 mode if needed for compliance
+;fips = yes
+
+; Microsoft CryptoAPI engine allows for authentication with private keys
+; stored in the Windows certificate store
+; Each section using this feature also needs the "engineId = capi" option
+;engine = capi
+
+; **************************************************************************
+; * Service defaults may also be specified in individual service sections  *
+; **************************************************************************
+
+; Enable support for the insecure SSLv3 protocol
+;options = -NO_SSLv3
+
+; These options provide additional security at some performance degradation
+;options = SINGLE_ECDH_USE
+;options = SINGLE_DH_USE
+
+; *********** ***************************************************************
+; * Include all configuration file fragments from the specified folder     *
+; **************************************************************************
+
+;include = conf.d
+
+; **************************************************************************
+; * Service definitions (at least one service has to be defined)           *
+; **************************************************************************
+; ***************************************** Example TLS client mode services
+
+;verify = 0 ; Request and ignore the peer certificate.
+;verify = 1 ; Verify the peer certificate if present.
+;verify = 2 ; Verify the peer certificate.
+;verify = 3 ; Verify the peer with locally installed certificate.
+;verify = 4 ; Ignore the CA chain and only verify the peer certificate.
+;verify = default; No verify.
+
+
+[DEV:9499<-LOCAL:9699]
+client = yes
+accept = 127.0.0.1:9699
+connect = portcullis-1-a.dev.qasgxdo.qasgx.com:9499
+verify = 0
+
+[DEV:9698->9498]
+client = yes
+accept = 127.0.0.1:9698
+connect = portcullis-1-b.dev.qasgxdo.qasgx.com:9498
+;checkHost = portcullis-1-a.dev.qasgxdo.qasgx.com
+;CAfile = peer-QADEV:9698->9498.pem
+verify = 0
