@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <groupId>com.sgx.bt.alien</groupId>
+        <artifactId>alien</artifactId>
+        <version>0.4.1-SNAPSHOT</version>
+    </parent>
+
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.sgx.bt.alien</groupId>
+    <artifactId>alien-client</artifactId>
+    <name>alien-client</name>
+    <version>0.4.1-SNAPSHOT</version>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.sgx.bt.alien</groupId>
+            <artifactId>alien-api</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.sgx.bt.share</groupId>
+            <artifactId>share</artifactId>
+            <version>0.4.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.sgx.bt.pisa</groupId>
+            <artifactId>pisa</artifactId>
+            <version>0.3.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.sgx.bt.toolbox</groupId>
+            <artifactId>toolbox-tube</artifactId>
+            <version>0.3.1</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <configuration>
+                    <archive>
+                        <manifestEntries>
+                            <Implementation-Source>${project.scm.url}</Implementation-Source>
+                        </manifestEntries>
+                    </archive>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.6</version>
+                <configuration>
+                    <testSourceDirectory>${basedir}/src/test</testSourceDirectory>
+                    <includes>
+                        <include>**/*Test.java</include>
+                        <include>**/*Spec.*</include>
+                    </includes>
+                    <excludes>
+                        <exclude>**/StressTest.java</exclude>
+                    </excludes>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>

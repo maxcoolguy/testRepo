@@ -1,0 +1,6 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Thu Dec 27 16:15:17 SGT 2018
+alien-client-0.4.1-SNAPSHOT.jar>=
+alien-client-0.4.1-SNAPSHOT.pom>=
+alien-client-0.4.1-SNAPSHOT-sources.jar>=
+alien-client-0.4.1-20181226.202529-8.jar>nexus-server=

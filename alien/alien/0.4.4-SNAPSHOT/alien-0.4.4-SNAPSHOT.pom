@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.sgx.bt.maven</groupId>
+        <artifactId>sgx-default-parent</artifactId>
+        <version>0.4.0</version>
+    </parent>
+
+    <groupId>com.sgx.bt.alien</groupId>
+    <artifactId>alien</artifactId>
+    <packaging>pom</packaging>
+    <version>0.4.4-SNAPSHOT</version>
+
+    <name>alien</name>
+
+    <scm>
+        <connection>scm:git:ssh://git@bitbucket.qasgx.com:7999/bt/alien.git</connection>
+        <developerConnection>scm:git:ssh://git@bitbucket.qasgx.com:7999/bt/alien.git</developerConnection>
+        <tag>release/0.3</tag>
+    </scm>
+
+    <modules>
+        <module>alien-server</module>
+        <module>alien-client</module>
+        <module>alien-api</module>
+        <module>alien-stressTest</module>
+    </modules>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-enforcer-plugin</artifactId>
+
+                <executions>
+                    <execution>
+                        <id>enforce-no-snapshots</id>
+                        <goals>
+                            <goal>enforce</goal>
+                        </goals>
+                        <configuration>
+                            <rules>
+                                <requireReleaseDeps>
+                                    <searchTransitive>false</searchTransitive>
+                                    <failWhenParentIsSnapshot>false</failWhenParentIsSnapshot>
+                                    <excludes>
+                                        <exclude>com.sgx.bt.alien:alien-*</exclude>
+                                        <exclude>com.sgx.bt.share:share</exclude>
+                                        <exclude>com.sgx.bt.corebase:corebase</exclude>
+                                    </excludes>
+                                </requireReleaseDeps>
+                            </rules>
+                            <fail>true</fail>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>

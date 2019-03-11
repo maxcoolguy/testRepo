@@ -1,0 +1,5 @@
+#NOTE: This is an Aether internal implementation file, its format can be changed without prior notice.
+#Sat Jan 19 18:59:14 SGT 2019
+alien-client-0.4.2.jar>=
+alien-client-0.4.2.pom>=
+alien-client-0.4.2-sources.jar>=

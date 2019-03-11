@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata modelVersion="1.1.0">
+  <groupId>com.sgx.bt.alien</groupId>
+  <artifactId>alien-client</artifactId>
+  <version>0.3.5-SNAPSHOT</version>
+  <versioning>
+    <snapshot>
+      <localCopy>true</localCopy>
+    </snapshot>
+    <lastUpdated>20181224171619</lastUpdated>
+    <snapshotVersions>
+      <snapshotVersion>
+        <classifier>sources</classifier>
+        <extension>jar</extension>
+        <value>0.3.5-SNAPSHOT</value>
+        <updated>20181224171619</updated>
+      </snapshotVersion>
+      <snapshotVersion>
+        <extension>jar</extension>
+        <value>0.3.5-SNAPSHOT</value>
+        <updated>20181224171619</updated>
+      </snapshotVersion>
+      <snapshotVersion>
+        <extension>pom</extension>
+        <value>0.3.5-SNAPSHOT</value>
+        <updated>20181224171619</updated>
+      </snapshotVersion>
+    </snapshotVersions>
+  </versioning>
+</metadata>

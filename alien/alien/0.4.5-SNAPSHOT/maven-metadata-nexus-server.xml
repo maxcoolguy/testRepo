@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata modelVersion="1.1.0">
+  <groupId>com.sgx.bt.alien</groupId>
+  <artifactId>alien</artifactId>
+  <version>0.4.5-SNAPSHOT</version>
+  <versioning>
+    <snapshot>
+      <timestamp>20190225.165100</timestamp>
+      <buildNumber>2</buildNumber>
+    </snapshot>
+    <lastUpdated>20190225165100</lastUpdated>
+    <snapshotVersions>
+      <snapshotVersion>
+        <extension>pom</extension>
+        <value>0.4.5-20190225.165100-2</value>
+        <updated>20190225165100</updated>
+      </snapshotVersion>
+    </snapshotVersions>
+  </versioning>
+</metadata>
